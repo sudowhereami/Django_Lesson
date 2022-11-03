@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TVShow detail</title>
+</head>
+<body>
+<!--<h1>{{shows_id.title}}</h1>-->
+<!--<h2>{{shows_id.description}}</h2>-->
+<!--<img src="{{shows_id.image.url}}" alt="" width="400" height="300">-->
+<!--<p>{{shows_id.quantity}}</p>-->
+<!--<p>{{shows_id.genre}}</p>-->
+<!--<p>{{shows_id.created_date}}</p>-->
+<!--<p>{{shows_id.updated_date}}</p>-->
+
+<figure class="figure">
+  <img src="{{shows_id.image.url}}" class="figure-img img-fluid rounded" alt="..."
+  width="200" height="300">
+  <figcaption class="figure-caption">
+        <h1>{{shows_id.title}}</h1>
+        <p>{{shows_id.description}}</p>
+        <p>{{shows_id.quantity}}</p>
+        <p>{{shows_id.genre}}</p>
+        <p>{{shows_id.created_date}}</p>
+        <p>{{shows_id.updated_date}}</p>
+      <button type="button" class="btn btn-danger"><a href="/shows/">Back</a></button>
+      <button>
+          <a href="/shows/{{shows_id.id}}/update/">
+              Update Shows
+          </a>
+      </button>
+      <button>
+          <a href="/shows/{{shows_id.id}}/delete/">
+              Delete Shows
+          </a>
+      </button>
+  </figcaption>
+</figure>
+
+</body>
+</html>

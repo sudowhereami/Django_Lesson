@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TVShows</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+</head>
+<body>
+{% for i in shows_object %}
+<!--<center>-->
+<!--    <hr>-->
+<!--<img src="{{i.image.url}}" alt="" width="120" height="120">-->
+<!--    <h2>{{i.title}}</h2>-->
+<!--    <a href="/shows/{{i.id}}">More</a>-->
+<!--        <hr>-->
+<!--</center>-->
+
+<div class="card" style="width: 18rem;">
+  <img src="{{i.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.genre}}</p>
+    <a href="/shows/{{i.id}}" class="btn btn-primary">More</a>
+  </div>
+</div>
+<button type="button" class="btn btn-danger"><a href="/add-shows/">Add film</a></button>
+{% endfor %}
+</body>
+</html>
