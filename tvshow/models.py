@@ -21,3 +21,12 @@ class TVShow(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CommentTVShows(models.Model):
+    comment = models.ForeignKey(TVShow, on_delete=models.CASCADE, related_name='comment')
+    text = models.TextField
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

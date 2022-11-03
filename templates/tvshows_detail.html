@@ -15,26 +15,31 @@
 <!--<p>{{shows_id.updated_date}}</p>-->
 
 <figure class="figure">
-  <img src="{{shows_id.image.url}}" class="figure-img img-fluid rounded" alt="..."
+  <img src="{{object.image.url}}" class="figure-img img-fluid rounded" alt="..."
   width="200" height="300">
   <figcaption class="figure-caption">
-        <h1>{{shows_id.title}}</h1>
-        <p>{{shows_id.description}}</p>
-        <p>{{shows_id.quantity}}</p>
-        <p>{{shows_id.genre}}</p>
-        <p>{{shows_id.created_date}}</p>
-        <p>{{shows_id.updated_date}}</p>
+        <h1>{{object.title}}</h1>
+        <p>{{object.description}}</p>
+        <p>{{object.quantity}}</p>
+        <p>{{object.genre}}</p>
+        <p>{{object.created_date}}</p>
+        <p>{{object.updated_date}}</p>
       <button type="button" class="btn btn-danger"><a href="/shows/">Back</a></button>
       <button>
-          <a href="/shows/{{shows_id.id}}/update/">
+          <a href="/shows/{{object.id}}/update/">
               Update Shows
           </a>
       </button>
       <button>
-          <a href="/shows/{{shows_id.id}}/delete/">
+          <a href="/shows/{{object.id}}/delete/">
               Delete Shows
           </a>
       </button>
+      <hr>
+      {% for i in object.comment.all %}
+      <h4>i.text</h4>
+      <p>i.created_date</p>
+      {% endfor %}
   </figcaption>
 </figure>
 
